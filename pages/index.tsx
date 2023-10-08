@@ -8,11 +8,10 @@ import Home from './Home'
 
 import Introduction from './Introduction'
 
-export default function Landing() {
-	const [user, setUser] = useState({
-		address: '0x9a3bD7887285F95B43D6BeD207ddE87d01CfB960',
-		isAuthed: false,
-	})
+export default function Landing(props) {
+	let setUser = props.setUser
+	let user = props.user
+
 	const { connect } = useAccount()
 
 	const handleConnect = async () => {
@@ -21,13 +20,14 @@ export default function Landing() {
 		setUser({
 			address: account.annex.signer,
 			isAuthed: true,
+			balance: [500, 46],
 		})
 	}
 
 	return (
 		<div>
-			{!user.isAuthed ? (
-				<Home walletAddress={user.address} />
+			{user.isAuthed ? (
+				<Home walletAddress={user.address} balance={user.balance} />
 			) : (
 				// <Page>
 				// 	<Section>

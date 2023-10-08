@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import HomepagePhoto from './img/Homepage.png'
 
-import * as Vechain from '@vechain.energy/use-vechain'
+import { useBallance } from '@vechain.energy/use-vechain'
 import Section from '@/components/section'
 import Page from '@/components/page'
 import { Button } from 'antd'
@@ -13,13 +13,7 @@ import BottomNav from '@/components/bottom-nav'
 function Home(props) {
 	const data = props
 	const [balance, setBallance] = useState([100, 100])
-	const { vet, vtho } = Vechain.useBallance(data.walletAddress)
-	useEffect(() => {
-		const fetchBalance = async () => {
-			setBallance([vet, vtho])
-		}
-		fetchBalance()
-	})
+	// const { vet, vtho } = useBallance(data.walletAddress)
 
 	// Destructure props directly, if needed
 	const contractAddress = '0xb7029C6886989423d87bb6F2B6ebAc91E5B2ffa8'
@@ -64,14 +58,9 @@ function Home(props) {
 					window.location.href = '/Market'
 				}}
 			></button>
-			<p className='fixed left-[9%] top-[24%] z-[100] h-10 w-10 rounded-lg p-2 text-xs font-bold text-green-500'>
+			<p className='fixed left-[7%] top-[24%] z-[100] h-10 w-auto rounded-lg p-2 text-xs font-bold text-green-500'>
 				{data.walletAddress}
-			</p>
-			<p className='fixed left-[9%] top-[28%] z-[100] h-10 w-10 rounded-lg p-2 text-xs font-bold text-green-500'>
-				$VET: {balance[0]}
-			</p>
-			<p className='fixed left-[9%] top-[30%] z-[100] h-10 w-10 rounded-lg p-2 text-xs font-bold text-green-500'>
-				$VTHO: {balance[1]}
+				<br /> {'$VET: ' + data.balance[0] + '    $VTHO: ' + data.balance[1]}
 			</p>
 			{/* <Link
 				href='/Social'
