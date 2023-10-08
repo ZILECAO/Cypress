@@ -12,21 +12,19 @@ const BottomNav = (props: any) => {
 
 	return (
 		<div className='sm:hidden'>
-			<nav className='fixed bottom-0 w-full border-t bg-zinc-100 pb-safe dark:border-zinc-800 dark:bg-zinc-900'>
+			<nav className='fixed bottom-0 w-full border-t bg-yellow-900 text-white pb-safe'>
 				<div className='mx-auto flex h-16 max-w-md items-center justify-around px-6'>
 					{links.map(({ href, label, icon }) => (
 						<Link key={label} href={href}>
 							<a
 								className={`flex h-full w-full flex-col items-center justify-center space-y-1 ${
 									router.pathname === href
-										? 'text-indigo-500 dark:text-indigo-400'
-										: 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50'
+										? 'text-green-200 hover:text-green-300'
+										: 'text-white hover:text-gray-400'
 								}`}
 							>
 								{icon}
-								<span className='text-xs text-zinc-600 dark:text-zinc-400'>
-									{label}
-								</span>
+								<span className='text-xs '>{label}</span>
 							</a>
 						</Link>
 					))}
@@ -40,8 +38,8 @@ export default BottomNav
 
 const links = [
 	{
-		label: 'Home',
-		href: '/',
+		label: 'Challenges',
+		href: '/Challenges',
 		icon: (
 			<svg
 				viewBox='0 0 15 15'
@@ -58,8 +56,8 @@ const links = [
 		),
 	},
 	{
-		label: 'Story',
-		href: '/story',
+		label: 'Garden',
+		href: '/',
 		icon: (
 			<svg
 				viewBox='0 0 15 15'
@@ -76,8 +74,8 @@ const links = [
 		),
 	},
 	{
-		label: 'Recipes',
-		href: '/recipes',
+		label: 'Social',
+		href: '/Social',
 		icon: (
 			<svg
 				viewBox='0 0 15 15'

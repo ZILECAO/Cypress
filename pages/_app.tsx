@@ -7,25 +7,25 @@ import { VeChainProvider } from '@vechain.energy/use-vechain'
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
-		<VeChainProvider
-			config={{
-				node: 'https://testnet.vecha.in',
-				network: 'test',
-			}}
-			options={{
-				delegate: process.env.VEN_DELEGATE_URL,
-				delegateTest: String(process.env.VEN_DELEGATE_URL).concat('/test'),
-			}}
+		<ThemeProvider
+			attribute='class'
+			defaultTheme='system'
+			disableTransitionOnChange
 		>
-			<ThemeProvider
-				attribute='class'
-				defaultTheme='system'
-				disableTransitionOnChange
+			<Meta />
+			<VeChainProvider
+				config={{
+					node: 'https://testnet.vecha.in',
+					network: 'test',
+				}}
+				options={{
+					delegate: process.env.VEN_DELEGATE_URL,
+					delegateTest: String(process.env.VEN_DELEGATE_URL).concat('/test'),
+				}}
 			>
-				<Meta />
 				<Component {...pageProps} />
-			</ThemeProvider>
-		</VeChainProvider>
+			</VeChainProvider>
+		</ThemeProvider>
 	)
 }
 
