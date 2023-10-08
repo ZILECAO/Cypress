@@ -1,36 +1,54 @@
-import Page from '@/components/page'
+import React, { useState } from 'react'
+
+import { useAccount } from '@vechain.energy/use-vechain'
 import Section from '@/components/section'
+import Page from '@/components/page'
 
-const Index = () => (
-	<Page>
-		<Section>
-			<h2 className='text-xl font-semibold text-zinc-800 dark:text-zinc-200'>
-				We grow a lot of rice.
-			</h2>
+import Home from './Home'
 
-			<div className='mt-2'>
-				<p className='text-zinc-600 dark:text-zinc-400'>
-					You love rice, and so does the rest of the world. In the crop year
-					2008/2009, the milled rice production volume amounted to over{' '}
-					<span className='font-medium text-zinc-900 dark:text-zinc-50'>
-						448 million tons
-					</span>{' '}
-					worldwide.
-				</p>
+export default function Landing() {
+	const [user, setUser] = useState({
+		address: '',
+		balance: 0,
+		isAuthed: false,
+	})
+	const { connect } = useAccount()
 
-				<br />
+	const handleConnect = async () => {
+		connect()
+	}
 
-				<p className='text-sm text-zinc-600 dark:text-zinc-400'>
-					<a
-						href='https://github.com/mvllow/next-pwa-template'
-						className='underline'
-					>
-						Source
-					</a>
-				</p>
-			</div>
-		</Section>
-	</Page>
-)
+	return (
+		<div>
+			{user.isAuthed ? (
+				<Home />
+			) : (
+				<Page>
+					<Section>
+						<h2 className='flex justify-center text-xl font-semibold'>
+							Travel Sustainably
+						</h2>
 
-export default Index
+						<div className='mt-2'>
+							<p className='text-zinc-600 dark:text-zinc-400'>
+								Choose green transportation options such as the MBTA, Bluebikes,
+								and Uber Carpool.
+							</p>
+						</div>
+					</Section>
+
+					<Section>
+						<div className='flex justify-center'>
+							<button
+								onClick={handleConnect}
+								className='rounded-lg bg-green-500 py-2 px-4'
+							>
+								Connect
+							</button>
+						</div>
+					</Section>
+				</Page>
+			)}
+		</div>
+	)
+}

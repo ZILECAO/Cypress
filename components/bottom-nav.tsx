@@ -1,7 +1,13 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const BottomNav = () => {
+const BottomNav = (props: any) => {
+	// const data = props.data
+
+	// if (!data.isAuthed) {
+	// 	return null
+	// }
+
 	const router = useRouter()
 
 	return (
