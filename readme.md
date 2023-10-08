@@ -2,7 +2,7 @@
 
 Cypress is a dApp that we have developed with Vechain that utilizes cryptocurrency to incentivize users to make sustainable travel choices. Our project aims to be a part of the solution to the environmental degradation that is caused by urbanization and the increasing levels of carbon emissions in cities. Consumers may not produce the majority of pollution but they are the majority of the population– Cypress allows conscious consumers to be a part of a community that values sustainability on every level. On Cypress users can build their own virtual garden for simply traveling sustainably. Cypress uses 3 party integrations from sustainable transportation companies such as Uber, MBTA, and BlueBike in order to verify that users have taken one of those forms of transportation. From there, Cypress uses Vechain technology to distribute VET to those users. This VET can then be used within the app to purchase flowers for a virtual garden. Users can expand their gardens, unlock new flowers, complete challenges, and compare their impact with friends. We use Vechain to distribute the incentive in cryptocurrency which is highly secure and promotes a system with low carbon emissions. 
 
-![Cypress UI]([https://gateway.pinata.cloud/ipfs/QmVdp1PWSGuReLyXZQDPoLX46yps4QBQdFfCJRqApfsemy?_gl=1*a7z32h*_ga*Y2YyOTEzZDYtZDk3YS00MjQ1LTlmNTgtNDFjMDE0YjQxY2U4*_ga_5RMPXG14TE*MTY3ODg2ODM2NC43LjAuMTY3ODg2ODM2NS41OS4wLjA.](https://copper-dirty-goose-489.mypinata.cloud/ipfs/QmVTzU7E6rsjL68p9KDj8vnC69CzY6xXoLBHaoMZ7UNyGG/9.png))
+![Cypress UI](https://copper-dirty-goose-489.mypinata.cloud/ipfs/QmVTzU7E6rsjL68p9KDj8vnC69CzY6xXoLBHaoMZ7UNyGG/9.png)
 
 ---
 
